@@ -127,7 +127,7 @@ Educativo y de Aprendizaje Personal Python
 
 # Creación de Vistas
 
-14. escuela/views.py 
+14. hotel/views.py 
     ```bash 
     from django.shortcuts import render
     from django.db import connection
