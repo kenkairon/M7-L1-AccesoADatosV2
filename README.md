@@ -85,7 +85,7 @@ Educativo y de Aprendizaje Personal Python
     }
 11. Instalacion de psycopg2: es un adaptador de base de datos para Python que permite interactuar con bases de datos PostgreSQL
     ```bash
-    pip install pyscopg2 
+    pip install psycopg2 
 
 # Creación del Modelo 
 
