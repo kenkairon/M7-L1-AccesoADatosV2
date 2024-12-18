@@ -87,9 +87,14 @@ Educativo y de Aprendizaje Personal Python
     ```bash
     pip install psycopg2 
 
+12. Guardo las dependencias me voy un cd .. mas atras del proyecto principal con el objetivo que quede al lado del README.md
+    ```bash
+    cd ..
+    pip freeze > requirements.txt
+
 # Creación del Modelo 
 
-12. en hotel/models.py
+13. en hotel/models.py
     ```bash
     from django.db import models
 
@@ -120,14 +125,14 @@ Educativo y de Aprendizaje Personal Python
         def __str__(self):
             return f"Habitacion {self.numero_habitacion} ({self.get_tipo_habitacion_display()})"
 
-13. Ejecuta las migraciones para aplicar estos cambios a la base de datos:
+14. Ejecuta las migraciones para aplicar estos cambios a la base de datos:
     ```bash 
     python manage.py makemigrations
     python manage.py migrate
 
 # Creación de Vistas
 
-14. hotel/views.py 
+15. hotel/views.py 
     ```bash 
     from django.shortcuts import render
     from django.db import connection
@@ -160,7 +165,7 @@ Educativo y de Aprendizaje Personal Python
         clientes = Cliente.objects.raw('SELECT * FROM hotel_cliente ORDER BY fecha_ingreso DESC')
         return render(request, 'clientes.html', {'clientes': clientes})
 
-15. creamos en hotel/templates/clientes_db.html 
+16. creamos en hotel/templates/clientes_db.html 
     ```bash 
     <!DOCTYPE html>
     <html lang="en">
@@ -185,7 +190,7 @@ Educativo y de Aprendizaje Personal Python
         </table>
     </body>
     </html>
-16. creamos en hotel/templates/clientes.html 
+17. creamos en hotel/templates/clientes.html 
     ```bash 
     <!DOCTYPE html>
     <html lang="en">
@@ -204,7 +209,7 @@ Educativo y de Aprendizaje Personal Python
         </ul>
     </body>
     </html>
-17. creamos en hotel/templates/habitaciones_db.html 
+18. creamos en hotel/templates/habitaciones_db.html 
     ```bash 
     <!DOCTYPE html>
     <html lang="en">
@@ -224,7 +229,7 @@ Educativo y de Aprendizaje Personal Python
         </ul>
     </body>
     </html>
-18. creamos en hotel/templates/habitaciones.html 
+19. creamos en hotel/templates/habitaciones.html 
     ```bash 
     <!DOCTYPE html>
     <html lang="en">
@@ -245,7 +250,7 @@ Educativo y de Aprendizaje Personal Python
     </body>
 
     </html>
-19. administracion_hotel/urls.py 
+20. administracion_hotel/urls.py 
     ```bash 
     from django.contrib import admin
     from django.urls import path
@@ -260,11 +265,11 @@ Educativo y de Aprendizaje Personal Python
     ]
 # Insertamos datos en un dataShell 
 
-20. Ingresar datos con el comando
+21. Ingresar datos con el comando
     ```bash	
     python manage.py shell
 
-21. Información de Ingresos de datos
+22. Información de Ingresos de datos
     ```bash	
     from hotel.models import Cliente, Habitacion
     from datetime import date
@@ -331,7 +336,7 @@ Educativo y de Aprendizaje Personal Python
 
     exit()
 # Configuracion de la vista de la base de datos
-22. En hotel/admin.py 
+23. En hotel/admin.py 
     ```bash	
     from django.contrib import admin
     from .models import Cliente, Habitacion
